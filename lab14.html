@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="profile" id="profile">
+        <div class="notify">
+            <p>1</p>
+        </div>
+    </div>
+    <a href="https:instagram.com/yuyu.ps___"><h1 class="text" id="username">Panumas Saetae 67070267, hi</h1></a>
+    <div class="setusername">
+        <label class="setusernameword">Set Username : </label><input class="block" id="input-name" type="text"><button class="button" onclick="setName()">Set</button>
+    </div>
+    <div class="setprofile">
+        <label class="setprofileword">Set Profile Picture : </label><input class="block" id="input-url" type="text"><button class="button" onclick="setImg()">Set</button>
+    </div>
+    <div class="namephone">
+        <input class="block" type="text" id="inpName" placeholder="Name">
+        <input class="block" type="text" id="inpPhone" placeholder="Phone">
+        <button class="button" id="add" onclick="updateRow()">Add</button>
+        <button class="button" id="export" onclick="saveCSV()">Export</button>
+    </div>
+    <table class="table" id="table">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Phone</th>
+        </tr>
+    </table>
+    
+    <script>
+        const name = document.getElementById("username");
+        const inputName = document.getElementById("input-name");
+        const profile = document.getElementById("profile");
+        const inputUrl = document.getElementById("input-url");
+        const table = document.getElementById("table");
+        const getinputName = document.getElementById("inpName");
+        const getinputPhone = document.getElementById("inpPhone");
+        function setName(){
+            name.textContent = inputName.value + ", Hi!";
+            inputName.value = "";
+        }
+        function setImg(){
+            profile.style.backgroundImage = "url(" + inputUrl.value + ")";
+            inputUrl.value = "";
+        }
+
+        let count = 0;
+        var phonenumber = [];
+        const addBtn = document.getElementById("add");
+        const saveButton = document.getElementById("export");
+        console.log(saveButton.value)
+
+        function updateRow(){
+            count += 1;
+            const row = document.createElement("tr");
+            const cellNo = document.createElement("td");
+            const cellName = document.createElement("td");
+            const cellTel = document.createElement("td");
+            cellNo.textContent = count;
+            cellName.textContent = document.getElementById("inpName").value;
+            cellTel.textContent = document.getElementById("inpPhone").value;
+            row.appendChild(cellNo);
+            row.appendChild(cellName);
+            row.appendChild(cellTel);
+            const table = document.getElementById("table");
+            table.appendChild(row);
+            
+            let arr = [];
+            arr.push(count);
+            arr.push(document.getElementById("inpName").value);
+            arr.push(document.getElementById("inpPhone").value);
+            phonenumber.push(arr);
+            console.log(phonenumber);
+            
+            document.getElementById("inpName").value = "";
+            document.getElementById("inpPhone").value = "";
+        };
+        function saveCSV() {
+            const csvContent = phonenumber.map(row => row.join(",")).join("\n"); // Convert array to CSV string
+                const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+                const link = document.createElement("a");
+                const url = URL.createObjectURL(blob);
+                link.setAttribute("href", url);
+                link.setAttribute("download", "data.csv");
+                link.style.visibility = "hidden";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+        };
+    </script>
+</body>
+</html>

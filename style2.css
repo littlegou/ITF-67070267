@@ -1,0 +1,81 @@
+*{
+    font-family: monospace;
+}
+.profile{
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    background-image: url(https://th.bing.com/th/id/OIP.hGSCbXlcOjL_9mmzerqAbQHaHa?rs=1&pid=ImgDetMain);
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+}
+.notify{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+table, td, th {
+    border: 1px solid;
+  }
+  
+table {
+    margin: auto;
+    border-collapse: collapse;
+    width: 50%;
+  }
+table th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: cadetblue;
+    color: white;
+  }
+table td{
+    text-align: center;
+}
+.button{
+    background-color: coral;
+    border: none;
+    color: aliceblue;
+    border-radius: 10%;
+    font-family: monospace;
+    column-gap: 5px;
+}
+.block{
+    border: none;
+    background-color: #add8e6;
+    column-gap: 10px;
+}
+.setusername{
+    padding: 5px 20px;
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+}
+.setprofile{
+    display: flex;
+    justify-content: center;
+    padding: 5px 20px;
+    column-gap: 10px;
+}
+.text{
+    display: flex;
+    justify-content: center;
+}
+.namephone{
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
