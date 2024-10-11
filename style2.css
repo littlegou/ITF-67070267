@@ -5,12 +5,11 @@
     margin: auto;
     width: 300px;
     height: 300px;
-    background-image: url(https://th.bing.com/th/id/OIP.hGSCbXlcOjL_9mmzerqAbQHaHa?rs=1&pid=ImgDetMain);
+    background-image: url(https://avatars.githubusercontent.com/u/174847245?s=400&u=4d0599f00d61620c1e4e716b43e2c51e67ac9bac&v=4);
     border-radius: 50%;
     background-size: cover;
     background-position: center;
     position: relative;
-    color: white;
 }
 .notify{
     width: 50px;
@@ -23,6 +22,7 @@
     position: absolute;
     bottom: 15px;
     right: 15px;
+    color: white;
 }
 table, td, th {
     border: 1px solid;
@@ -51,10 +51,19 @@ table td{
     font-family: monospace;
     column-gap: 5px;
 }
+.button:hover{
+    background-color: cadetblue;
+    border: none;
+    color: aliceblue;
+    border-radius: 10%;
+    font-family: monospace;
+    column-gap: 5px;
+}
 .block{
     border: none;
     background-color: #add8e6;
     column-gap: 10px;
+    border-radius: 10px;
 }
 .setusername{
     padding: 5px 20px;
